@@ -5,6 +5,7 @@ import Settings from '../pages/Settings/Settings';
 import DashboardOverview from '../pages/DashboardOverview/DashboardOverview';
 import Appointments from '../pages/Appointments/Appointments';
 import CallLogs from '../pages/CallLogs/CallLogs';
+import Profile from '../pages/Settings/Profile/Profile';
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: '/settings',
                 Component: Settings
+            },
+            {
+                path: '/settings/profile',
+                Component: Profile
             }
         ]
     }
