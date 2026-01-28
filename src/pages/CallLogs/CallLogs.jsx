@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaRegClock } from 'react-icons/fa6';
+import { IoMdCheckmarkCircleOutline } from 'react-icons/io';
 import { IoCallOutline } from 'react-icons/io5';
 
 const CallLogs = () => {
@@ -58,18 +60,33 @@ const CallLogs = () => {
                     <div className='flex flex-col md:flex-row md:justify-start md:items-start justify-between items-center'>
                         <div className='w-full'>
                             <h2 className='text-xl border-b border-info py-4 pl-4'>Call List</h2>
-                            <div className='p-4'>
-                                <div className='flex justify-between gap-3'>
-                                    <div className='w-fit p-2.5 bg-linear-to-b from-[#2B7FFF] to-[#00B8DB] rounded-[14px]'>
-                                        <IoCallOutline className='text-2xl' />
+                            <div className='mx-4 mt-4 mb-3'>
+                                <div className='flex justify-between items-start'>
+                                    <div className='flex items-center gap-3'>
+                                        <div className='w-fit p-2.5 bg-linear-to-b from-[#2B7FFF] to-[#00B8DB] rounded-[14px]'>
+                                            <IoCallOutline className='text-2xl' />
+                                        </div>
+                                        <div>
+                                            <p>+1 (555) 345-6789</p>
+                                            <p className='text-secondary text-sm mt-1'>2025-12-16 • 09:42 AM</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p>+1 (555) 345-6789</p>
-                                        <p className='text-secondary text-sm'>2025-12-16 • 09:42 AM</p>
+                                    <div className='bg-[#00C9504D] w-fit rounded-[10px] border border-[#05DF72] px-3 py-1.25'>
+                                        <p className='text-[#05DF72] text-xs'>AI Resolved</p>
                                     </div>
                                 </div>
-                                <div>
-                                    
+                                <div className='flex gap-4 mt-4'>
+                                    <div className='flex items-center gap-1 text-secondary flex-wrap text-sm'>
+                                        <FaRegClock />
+                                        <p>5:23</p>
+                                    </div>
+                                    <div className='flex items-center gap-1 text-secondary flex-wrap text-sm'>
+                                        <IoMdCheckmarkCircleOutline />
+                                        <p>Escalated to technician</p>
+                                    </div>
+                                    <div className='bg-[#2B7FFF33] w-fit rounded-sm px-2 py-1'>
+                                        <p className='text-[#51A2FF] text-sm'>Screen</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
