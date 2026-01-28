@@ -10,7 +10,7 @@ const CallTrends = () => {
                         <p className='text-secondary text-sm mt-1 mb-6'>Total: 472 calls</p>
                     </div>
                     <div className='w-full md:w-fit'>
-                        <select defaultValue="This week" className="select bg-[#1D293D] rounded-[10px] border border-info outline-info md:mr-4 w-full md:w-fit">
+                        <select defaultValue="This week" className="select bg-[#1D293D] rounded-[10px] border border-info outline-info mr-8 w-full">
                             <option disabled={true}>This week</option>
                             <option>This Month</option>
                             <option>This Year</option>
