@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router';
-import { IoMdNotificationsOutline } from 'react-icons/io';
+import { IoIosLogOut, IoMdNotificationsOutline } from 'react-icons/io';
 import { IoCallOutline, IoHomeSharp } from 'react-icons/io5';
 import { FiCalendar } from 'react-icons/fi';
 import { LuSettings } from 'react-icons/lu';
@@ -42,7 +42,7 @@ const DashboardLayout = () => {
                 <Outlet></Outlet>
             </div>
 
-            <div className="drawer-side is-drawer-close:overflow-visible">
+            <div className="drawer-side is-drawer-close:overflow-visible border-r border-info">
                 <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
                 <div className="flex min-h-full flex-col items-start bg-accent is-drawer-close:w-18 is-drawer-open:w-64">
                     <div className='flex items-center justify-center mt-9.5 mb-17.5 w-full'>
@@ -54,32 +54,39 @@ const DashboardLayout = () => {
                     <ul className="menu w-full grow gap-7">
                         {/* List item */}
                         <li>
-                            <NavLink to="/" className="is-drawer-close:tooltip is-drawer-close:tooltip-right items-center gap-4" data-tip="Homepage">
+                            <NavLink to="/" className="is-drawer-close:tooltip is-drawer-close:tooltip-right items-center gap-4" data-tip="Dashboard Overview">
                                 {/* Home icon */}
                                 <IoHomeSharp className=" inline-block text-[32px]" />
                                 <span className="font-medium is-drawer-close:hidden">Dashboard Overview</span>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/call-logs" className="is-drawer-close:tooltip is-drawer-close:tooltip-right items-center gap-4" data-tip="Homepage">
+                            <NavLink to="/call-logs" className="is-drawer-close:tooltip is-drawer-close:tooltip-right items-center gap-4" data-tip="Call Logs">
                                 {/* Home icon */}
                                 <IoCallOutline className=" inline-block text-[32px]" />
                                 <span className="font-medium is-drawer-close:hidden">Call Logs</span>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/appointments" className="is-drawer-close:tooltip is-drawer-close:tooltip-right items-center gap-4" data-tip="Homepage">
+                            <NavLink to="/appointments" className="is-drawer-close:tooltip is-drawer-close:tooltip-right items-center gap-4" data-tip="Appointments">
                                 {/* Home icon */}
                                 <FiCalendar className=" inline-block text-[32px]" />
                                 <span className="font-medium is-drawer-close:hidden">Appointments</span>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/settings" className="is-drawer-close:tooltip is-drawer-close:tooltip-right items-center gap-4" data-tip="Homepage">
+                            <NavLink to="/settings" className="is-drawer-close:tooltip is-drawer-close:tooltip-right items-center gap-4" data-tip="Settings">
                                 {/* Home icon */}
                                 <LuSettings className=" inline-block text-[32px]" />
                                 <span className="font-medium is-drawer-close:hidden">Settings</span>
                             </NavLink>
+                        </li>
+                        <li>
+                            <button className="is-drawer-close:tooltip is-drawer-close:tooltip-right items-center gap-4" data-tip="Log Out">
+                                {/* Home icon */}
+                                <IoIosLogOut className=" inline-block text-[32px] text-black font-bold" />
+                                <span className="font-medium is-drawer-close:hidden text-[#ff1100]">Log Out</span>
+                            </button>
                         </li>
                     </ul>
                 </div>
