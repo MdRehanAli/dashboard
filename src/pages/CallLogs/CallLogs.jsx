@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaRegClock } from 'react-icons/fa6';
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io';
-import { IoCallOutline } from 'react-icons/io5';
+import { IoCallOutline, IoDocumentTextOutline } from 'react-icons/io5';
 
 const CallLogs = () => {
     return (
@@ -55,6 +55,7 @@ const CallLogs = () => {
             </div>
 
             {/* Call List & Call Details */}
+            {/* Call List */}
             <div className='flex flex-col md:flex-row gap-6 mt-6'>
                 <div className='bg-accent rounded-2xl border border-info w-full'>
                     <div className='flex flex-col md:flex-row md:justify-start md:items-start justify-between items-center'>
@@ -67,7 +68,7 @@ const CallLogs = () => {
                                             <IoCallOutline className='text-2xl' />
                                         </div>
                                         <div>
-                                            <p>+1 (555) 345-6789</p>
+                                            <p className='text-lg'>+1 (555) 345-6789</p>
                                             <p className='text-secondary text-sm mt-1'>2025-12-16 • 09:42 AM</p>
                                         </div>
                                     </div>
@@ -75,12 +76,12 @@ const CallLogs = () => {
                                         <p className='text-[#05DF72] text-xs'>AI Resolved</p>
                                     </div>
                                 </div>
-                                <div className='flex gap-4 mt-4'>
-                                    <div className='flex items-center gap-1 text-secondary flex-wrap text-sm'>
+                                <div className='flex gap-4 mt-4 flex-wrap'>
+                                    <div className='flex items-center gap-1 text-secondary text-sm'>
                                         <FaRegClock />
                                         <p>5:23</p>
                                     </div>
-                                    <div className='flex items-center gap-1 text-secondary flex-wrap text-sm'>
+                                    <div className='flex items-center gap-1 text-secondary text-sm'>
                                         <IoMdCheckmarkCircleOutline />
                                         <p>Escalated to technician</p>
                                     </div>
@@ -92,10 +93,76 @@ const CallLogs = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Call Details  */}
                 <div className='bg-accent rounded-2xl border border-info w-full'>
-                    <div className='flex flex-col md:flex-row md:justify-start md:items-start justify-between items-center'>
-                        <div className='w-full'>
-                            <h2 className='text-xl border-b border-info py-4 pl-4'>Call Details</h2>
+                    <div className=''>
+                        <h2 className='text-xl border-b border-info py-4 pl-4'>Call Details</h2>
+                        <div className='p-6'>
+
+                            <div className=''>
+                                <div className='grid grid-cols-2 gap-4'>
+                                    <div>
+                                        <p className='text-secondary text-sm mb-1'>Phone Number</p>
+                                        <p className='text-lg'>+1 (555) 345-6789</p>
+                                    </div>
+                                    <div>
+                                        <p className='text-secondary text-sm mb-1'>Duration</p>
+                                        <p className='text-lg'>4:32</p>
+                                    </div>
+                                    <div>
+                                        <p className='text-secondary text-sm mb-1'>Date & Time</p>
+                                        <p className='text-lg'>2025-12-16 10:45 AM</p>
+                                    </div>
+                                    <div>
+                                        <p className='text-secondary text-sm mb-1'>Issue Type</p>
+                                        <p className='text-lg'>Screen</p>
+                                    </div>
+                                </div>
+                                <div className='my-6'>
+                                    <p className='text-secondary text-sm mb-1'>Issue Type</p>
+                                    <div className='bg-[#00C9504D] w-fit rounded-[10px] border border-[#05DF72] px-3 py-1.25'>
+                                        <p className='text-[#05DF72] text-sm'>AI Resolved</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p className='text-secondary text-sm mb-1'>Outcome</p>
+                                    <p className=''>Quote provided</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button className='p-4 w-full bg-linear-to-r from-[#ad46ff33] to-[#f6339a33] rounded-[14px] my-6'>
+                                    <span className='mr-2'></span>
+                                    <span className='text-[#c27aff]'>Play Audio Recording</span>
+                                </button>
+                                <div className='flex items-center gap-2 flex-wrap mb-3'>
+                                    <IoDocumentTextOutline className='text-[#51A2FF] text-xl' />
+                                    <p>Conversation Transcript</p>
+                                </div>
+                                <div className='p-4 bg-[#1d293d80] rounded-[14px] text-xs'>
+                                    <div className=''>
+                                        <p className='text-[#05DF72] mb-1 text-sm'>AI Assistant:</p>
+                                        <p>Thank you for calling UBreakiFix! How can I help you today?</p>
+                                    </div>
+                                    <div className='mt-3'>
+                                        <p className='text-[#51a2ff] mb-1 text-sm'>Customer:</p>
+                                        <p>Hi, my iPhone 13 screen is cracked. How much would it cost to repair?</p>
+                                    </div>
+                                    <div className='mt-3'>
+                                        <p className='text-[#05DF72] mb-1 text-sm'>AI Assistant:</p>
+                                        <p>I can help you with that! For an iPhone 13 screen repair, our price is $199. This includes parts, labor, and comes with a 90-day warranty. Would you like to book an appointment?</p>
+                                    </div>
+                                    <div className='mt-3'>
+                                        <p className='text-[#51a2ff] mb-1 text-sm'>Customer:</p>
+                                        <p>Yes, please! When are you available?</p>
+                                    </div>
+                                    <div className='mt-3'>
+                                        <p className='text-[#05DF72] mb-1 text-sm'>AI Assistant:</p>
+                                        <p>Great! I have availability today at 2:00 PM or tomorrow at 10:00 AM. Which works better for you?</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
