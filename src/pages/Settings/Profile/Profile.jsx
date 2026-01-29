@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FiEdit } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router';
+import Swal from 'sweetalert2';
 
 const Profile = () => {
 
@@ -14,11 +15,16 @@ const Profile = () => {
     });
 
     const handleChange = e => {
-        setForm({...form, [e.target.name]: e.target.value});
+        e.preventDefault();
+        setForm({ ...form, [e.target.name]: e.target.value });
     };
 
     const handleSave = () => {
         localStorage.setItem('profile', JSON.stringify(form));
+        Swal.fire({
+            title: "Profile Updated!",
+            timer: 1500
+        });
         navigate('/settings');
     }
 
@@ -45,7 +51,7 @@ const Profile = () => {
                                 <label className="label mb-2">Full Name</label>
                                 <input defaultValue="Jane D." type="text" name='fullName' onChange={handleChange} className="input w-full bg-[#0a0a0f80] border border-[#00ff8833] outline-[#00ff8833] rounded-[14px]" placeholder="Store Name" />
                                 <label className="label mb-2 mt-6">Store Name</label>
-                                <input defaultValue="Ubreakfix Store" type="text"  name='storeName' onChange={handleChange} className="input w-full bg-[#0a0a0f80] border border-[#00ff8833] outline-[#00ff8833] rounded-[14px]" placeholder="Ubreakfix Store" />
+                                <input defaultValue="Ubreakfix Store" type="text" name='storeName' onChange={handleChange} className="input w-full bg-[#0a0a0f80] border border-[#00ff8833] outline-[#00ff8833] rounded-[14px]" placeholder="Ubreakfix Store" />
                             </div>
                             <div className='flex-1'>
                                 <label className="label mb-2">Email</label>
