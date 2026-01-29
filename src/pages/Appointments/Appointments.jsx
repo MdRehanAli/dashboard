@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CiCircleInfo } from 'react-icons/ci';
 import { FiCalendar } from 'react-icons/fi';
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io';
@@ -6,6 +6,20 @@ import { LuCopy } from 'react-icons/lu';
 import { NavLink } from 'react-router';
 
 const Appointments = () => {
+
+    const [copied, setCopied] = useState(false);
+
+    const link = "https://techstore.com/book?id=store123";
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(link);
+        setCopied(true);
+
+        setTimeout(() => {
+            setCopied(false);
+        }, 3000)
+    }
+
     return (
         <section className='m-6'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10'>
@@ -36,11 +50,11 @@ const Appointments = () => {
                 <p>Booking Link</p>
                 <div className='mt-4 flex md:flex-row flex-col gap-3 items-center'>
                     <div className='w-full'>
-                        <p className='bg-[#0a0a0f80] border border-[#00ff8833] px-4 py-3 rounded-[14px]'>https://techstore.com/book?id=store123</p>
+                        <p className='bg-[#0a0a0f80] border border-[#00ff8833] px-4 py-3 rounded-[14px]'>{link}</p>
                     </div>
-                    <button className='flex items-center p-2 px-3 gap-4 active'>
+                    <button onClick={handleCopy} className='flex items-center p-2 px-3 gap-4 active transition'>
                         <p><LuCopy className='text-3xl text-wrap' /></p>
-                        <p className='text-nowrap'> Copy Link</p>
+                        <p className='text-nowrap'> {copied ? "Copied" : "Copy Link"}</p>
                     </button>
                 </div>
             </div>
