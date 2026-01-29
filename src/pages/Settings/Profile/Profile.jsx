@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const Profile = () => {
     return (
         <section className='m-6'>
-            <div className='flex gap-16 border-b border-info pb-4 text-2xl'>
+            <div className='flex gap-16 border-b border-info pb-4 md:text-2xl'>
                 <Link>Profile</Link>
                 <Link>Password Settings</Link>
             </div>
