@@ -29,17 +29,17 @@ const CallLogs = () => {
                     <div className='w-full md:w-fit'>
                         <select defaultValue="All Type" className="select bg-[#1D293D] rounded-[10px] border border-info outline-info mr-8 w-full">
                             <option disabled={true}>All Type</option>
-                            <option>This Month</option>
-                            <option>This Year</option>
-                            <option>Today</option>
+                            <option>AI Resolved</option>
+                            <option>Appointment</option>
+                            <option>Dropped</option>
                         </select>
                     </div>
                     <div className='w-full md:w-fit'>
                         <select defaultValue="All Issues" className="select bg-[#1D293D] rounded-[10px] border border-info outline-info mr-8 w-full">
                             <option disabled={true}>All Issues</option>
-                            <option>This Month</option>
-                            <option>This Year</option>
-                            <option>Today</option>
+                            <option>Software</option>
+                            <option>Screen</option>
+                            <option>Battery</option>
                         </select>
                     </div>
                     <div className='w-full md:w-fit'>

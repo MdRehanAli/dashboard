@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Settings = () => {
+
+    const profile = JSON.parse(localStorage.getItem('profile')) || {};
+
     return (
         <section className='m-6'>
             <div className='flex gap-16 border-b border-info pb-4 md:text-2xl'>
@@ -24,19 +27,19 @@ const Settings = () => {
                             {/* row 1 */}
                             <tr className='border-b border-info'>
                                 <td className='py-5.5'>Full Name:</td>
-                                <td>Jane D.</td>
+                                <td>{profile.fullName}</td>
                             </tr>
                             <tr className='border-b border-info'>
                                 <td className='py-5.5'>Email:</td>
-                                <td>jane@gmail.com</td>
+                                <td>{profile.email}</td>
                             </tr>
                             <tr className='border-b border-info'>
                                 <td className='py-5.5'>Store Name:</td>
-                                <td>Ubreakfix Store</td>
+                                <td>{profile.storeName}</td>
                             </tr>
                             <tr className='border-b border-info'>
                                 <td className='py-5.5'>Store Address:</td>
-                                <td>123 Main Street, New York, NY 10001</td>
+                                <td>{profile.storeAddress}</td>
                             </tr>
                         </tbody>
                     </table>
