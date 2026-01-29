@@ -7,7 +7,9 @@ const Profile = () => {
 
     const navigate = useNavigate();
 
-    const [form, setForm] = useState({
+    const storedProfile = JSON.parse(localStorage.getItem('profile'))
+
+    const [form, setForm] = useState( storedProfile || {
         fullName: 'Jane D.',
         email: 'jane@gmail.com',
         storeName: 'Ubreakfix Store',
@@ -15,15 +17,16 @@ const Profile = () => {
     });
 
     const handleChange = e => {
-        e.preventDefault();
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSave = () => {
+    const handleSave = (e) => {
+        e.preventDefault();
         localStorage.setItem('profile', JSON.stringify(form));
         Swal.fire({
             title: "Profile Updated!",
-            timer: 1500
+            timer: 1500,
+            showConfirmButton: false
         });
         navigate('/settings');
     }
@@ -49,15 +52,17 @@ const Profile = () => {
                         <fieldset className="fieldset flex flex-col md:flex-row md:gap-14">
                             <div className='flex-1'>
                                 <label className="label mb-2">Full Name</label>
-                                <input defaultValue="Jane D." type="text" name='fullName' onChange={handleChange} className="input w-full bg-[#0a0a0f80] border border-[#00ff8833] outline-[#00ff8833] rounded-[14px]" placeholder="Store Name" />
+                                <input value={form.fullName} type="text" name='fullName' onChange={handleChange} className="input w-full bg-[#0a0a0f80] border border-[#00ff8833] outline-[#00ff8833] rounded-[14px]" placeholder="Store Name" />
+
                                 <label className="label mb-2 mt-6">Store Name</label>
-                                <input defaultValue="Ubreakfix Store" type="text" name='storeName' onChange={handleChange} className="input w-full bg-[#0a0a0f80] border border-[#00ff8833] outline-[#00ff8833] rounded-[14px]" placeholder="Ubreakfix Store" />
+                                <input value={form.storeName} type="text" name='storeName' onChange={handleChange} className="input w-full bg-[#0a0a0f80] border border-[#00ff8833] outline-[#00ff8833] rounded-[14px]" placeholder="Ubreakfix Store" />
                             </div>
                             <div className='flex-1'>
                                 <label className="label mb-2">Email</label>
-                                <input defaultValue="jane@gmail.com" type="email" name='email' onChange={handleChange} className="input w-full bg-[#0a0a0f80] border border-[#00ff8833] outline-[#00ff8833] rounded-[14px]" placeholder="jane@gmail.com" />
+                                <input value={form.email} type="email" name='email' onChange={handleChange} className="input w-full bg-[#0a0a0f80] border border-[#00ff8833] outline-[#00ff8833] rounded-[14px]" placeholder="jane@gmail.com" />
+
                                 <label className="label mb-2 mt-6">Store Address</label>
-                                <input defaultValue="123 Main Street, New York" type="text" name='storeAddress' onChange={handleChange} className="input w-full bg-[#0a0a0f80] border border-[#00ff8833] outline-[#00ff8833] rounded-[14px]" placeholder="123 Main Street, New York" />
+                                <input value={form.storeAddress} type="text" name='storeAddress' onChange={handleChange} className="input w-full bg-[#0a0a0f80] border border-[#00ff8833] outline-[#00ff8833] rounded-[14px]" placeholder="123 Main Street, New York" />
                             </div>
 
                         </fieldset>

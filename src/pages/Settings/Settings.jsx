@@ -3,7 +3,12 @@ import { Link } from 'react-router';
 
 const Settings = () => {
 
-    const profile = JSON.parse(localStorage.getItem('profile')) || {};
+    const profile = JSON.parse(localStorage.getItem('profile')) || {
+        fullName: 'Jane D.',
+        email: 'jane@gmail.com',
+        storeName: 'Ubreakfix Store',
+        storeAddress: '123 Main Street, New York',
+    };
 
     return (
         <section className='m-6'>
