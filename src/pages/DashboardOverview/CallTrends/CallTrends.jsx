@@ -1,4 +1,5 @@
 import React from 'react';
+import Chart from '../Chart/Chart';
 
 const CallTrends = () => {
     return (
@@ -17,6 +18,10 @@ const CallTrends = () => {
                             <option>Today</option>
                         </select>
                     </div>
+                </div>
+
+                <div>
+                    <Chart></Chart>
                 </div>
             </div>
         </section>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaRegClock } from 'react-icons/fa6';
+import { FiPlayCircle } from 'react-icons/fi';
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io';
 import { IoCallOutline, IoDocumentTextOutline } from 'react-icons/io5';
 
@@ -243,7 +244,7 @@ const CallLogs = () => {
                                     </div>
                                 </div>
                                 <div className='my-6'>
-                                    <p className='text-secondary text-sm mb-1'>Issue Type</p>
+                                    <p className='text-secondary text-sm mb-1'>Call Type</p>
                                     <div className='bg-linear-to-r from-[#00c95033] to-[#00bc7d33] w-fit rounded-[10px] border border-[#00c9504d] px-3 py-1.25'>
                                         <p className='text-[#05DF72] text-sm'>AI Resolved</p>
                                     </div>
@@ -255,9 +256,9 @@ const CallLogs = () => {
                             </div>
 
                             <div>
-                                <button className='p-4 w-full bg-linear-to-r from-[#ad46ff33] to-[#f6339a33] rounded-[14px] my-6'>
-                                    <span className='mr-2'></span>
-                                    <span className='text-[#c27aff]'>Play Audio Recording</span>
+                                <button className='p-4 w-full bg-linear-to-r from-[#ad46ff33] to-[#f6339a33] text-[#c27aff] rounded-[14px] my-6 flex justify-center items-center'>
+                                    <span className='mr-2'><FiPlayCircle /></span>
+                                    <span className=''>Play Audio Recording</span>
                                 </button>
                                 <div className='flex items-center gap-2 flex-wrap mb-3'>
                                     <IoDocumentTextOutline className='text-[#51A2FF] text-xl' />

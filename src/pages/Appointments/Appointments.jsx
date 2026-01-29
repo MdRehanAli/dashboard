@@ -126,6 +126,30 @@ const Appointments = () => {
                     </tbody>
                 </table>
             </div>
+
+            <div className='flex justify-center mt-11'>
+                <div className="join text-[#0F62FE]">
+                    <input
+                        className="join-item btn btn-square bg-transparent border-none shadow-none text-[#697077] text-nowrap mr-5"
+                        type="radio"
+                        name="options"
+                        aria-label="< Previous"
+                        checked="checked" />
+                    <input
+                        className="join-item btn btn-square bg-transparent border-none shadow-none text-[#0F62FE]"
+                        type="radio"
+                        name="options"
+                        aria-label="1"
+                        checked="checked" />
+                    <input className="join-item btn bg-[#a6c8ff] border-none" type="radio" name="options" aria-label="2" />
+                    <input className="join-item btn btn-square bg-transparent border-none shadow-none text-[#0F62FE]" type="radio" name="options" aria-label="3" />
+                    <input className="join-item btn btn-square bg-transparent border-none shadow-none text-[#0F62FE]" type="radio" name="options" aria-label="4" />
+                    <input className="join-item btn btn-square bg-transparent border-none shadow-none text-[#0F62FE]" type="radio" name="options" aria-label="5" />
+                    <input className="join-item btn btn-square bg-transparent border-none shadow-none text-[#0F62FE]" type="radio" name="options" aria-label=". . ." />
+                    <input className="join-item btn btn-square bg-transparent border-none shadow-none text-[#0F62FE]" type="radio" name="options" aria-label="11" />
+                    <input className="join-item btn btn-square bg-transparent border-none shadow-none text-[#0F62FE] text-nowrap" type="radio" name="options" aria-label="Next >" />
+                </div>
+            </div>
         </section>
     );
 };
