@@ -40,7 +40,9 @@ const DashboardLayout = () => {
                     </div>
                 </nav>
                 {/* Page content here */}
-                <Outlet></Outlet>
+                <div className='min-h-screen'>
+                    <Outlet></Outlet>
+                </div>
             </div>
 
             <div className="drawer-side is-drawer-close:overflow-visible border-r border-info">
@@ -52,7 +54,7 @@ const DashboardLayout = () => {
                         </div>
                     </div>
                     {/* Sidebar content here */}
-                    <ul className="menu w-full grow gap-7">
+                    <ul className="menu w-full grow gap-7 relative">
                         {/* List item */}
                         <li>
                             <NavLink to="/" className="is-drawer-close:tooltip is-drawer-close:tooltip-right items-center gap-4" data-tip="Dashboard Overview">
@@ -82,7 +84,7 @@ const DashboardLayout = () => {
                                 <span className="font-medium is-drawer-close:hidden">Settings</span>
                             </NavLink>
                         </li>
-                        <li>
+                        <li className='absolute bottom-12'>
                             <button className="is-drawer-close:tooltip is-drawer-close:tooltip-right items-center gap-4" data-tip="Log Out">
                                 {/* Home icon */}
                                 <IoIosLogOut className=" inline-block text-[32px] text-black font-bold" />
