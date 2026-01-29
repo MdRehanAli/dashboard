@@ -22,19 +22,19 @@ const Chart = () => {
                     margin={{
                         top: 20,
                         right: 0,
-                        left: 0,
+                        left: -20,
                         bottom: 0,
                     }}
                 >
                     <defs>
-            <linearGradient id="blueGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.9} />
-              <stop offset="100%" stopColor="#3b82f6" stopOpacity={0.1} />
-            </linearGradient>
-          </defs>
+                        <linearGradient id="blueGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.9} />
+                            <stop offset="100%" stopColor="#3b82f6" stopOpacity={0.1} />
+                        </linearGradient>
+                    </defs>
                     <CartesianGrid strokeDasharray="3 3" stroke='#1e293b' />
-                    <XAxis dataKey="name" stroke='#94a3b8'/>
-                    <YAxis stroke='#94a3b8'/>
+                    <XAxis dataKey="name" stroke='#94a3b8' />
+                    <YAxis stroke='#94a3b8' />
                     <Tooltip />
                     <Area type="monotone" dataKey="value" stroke="#3b82f6" strokeWidth={2} fill="url(#blueGradient)" />
                     <RechartsDevtools />

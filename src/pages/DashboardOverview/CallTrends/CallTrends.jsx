@@ -20,7 +20,7 @@ const CallTrends = () => {
                     </div>
                 </div>
 
-                <div>
+                <div className='mt-6 md:mt-0'>
                     <Chart></Chart>
                 </div>
             </div>

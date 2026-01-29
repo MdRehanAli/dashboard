@@ -19,7 +19,7 @@ const Profile = () => {
                     <Link to="" className='p-2 bg-[#7aa3cc] rounded-lg absolute w-fit left-18 -bottom-2'><FiEdit /></Link>
                 </div>
 
-                <div className='mt-14'>
+                <div className='my-14'>
                     <form className="card-body p-0">
                         <fieldset className="fieldset flex flex-col md:flex-row md:gap-14">
                             <div className='flex-1'>
